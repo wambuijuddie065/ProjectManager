@@ -1,0 +1,44 @@
+.container{
+    /* border: solid 2px red; */
+    display: flex;
+    color: white;
+    padding: 20px;
+}
+.leftContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    
+
+}
+.leftContainer .mainHeading{
+    font-size: 40px;
+}
+.leftContainer .desc{
+    font-size: 16px;
+    text-align: center;
+}
+.leftContainer .getStartedBtn{
+    height: 70px;
+    width: 350px;
+    background-color: #E11584;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 70px;
+
+
+}
+
+.rightContainer{
+    width:50%;
+    padding:20px;
+}
+.rightContainer img{
+  
+    width: 100%;
+    height: 100%;
+}

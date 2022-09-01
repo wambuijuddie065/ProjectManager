@@ -1,0 +1,85 @@
+.container{
+    display: flex;
+    gap: 20px;
+  
+
+}
+.logo {
+    height: 100px;
+    width: 50px;
+    align-self: center;
+    
+}
+.leftContainer{
+   height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: whitesmoke;
+
+}
+.dashboard,.assigned,.complete,.calendar{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.dashboard img ,.assigned img,.complete img,.calendar img{
+    height: 30px;
+}
+.rightContainer{
+    width: 80%;
+    height:fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    border-top: solid 2px #E11584;
+    padding: 20px;
+
+    
+
+}
+
+/* .topRightContainer{
+    width: 75vw;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    align-items: center;
+    
+
+
+}
+.search{
+    height: 40px;
+    width: 300px;
+    outline: none;
+    background-color: white;
+    border: solid 1px lightgray;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.prof{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.prof1 img{
+    height: 50px;
+
+}
+.prof1{
+    display: flex;
+    align-items: center;
+}
+.prof2 img{
+    height: 40px;
+}
+
+.bottomRightContainer{
+    background-color: whitesmoke;
+    padding: 20px;
+} */

@@ -1,0 +1,14 @@
+<div class="container">
+    <img class="logo" src="../../../../assets/logo.svg" alt="logo">
+        <p>LOGIN</p>
+    <form class="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit()" >
+        
+        
+        <input type="text" placeholder="Email" name="email" ngModel>
+        
+        <input type="password" placeholder="Password" name="password" ngModel>
+        <button type="submit"> LOGIN</button>
+    </form>
+    <p class="new">New member? <a href="" routerLink="/auth/signup">REGISTER</a></p>
+
+</div>

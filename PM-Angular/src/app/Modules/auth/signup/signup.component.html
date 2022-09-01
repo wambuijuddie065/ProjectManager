@@ -1,0 +1,15 @@
+<div class="container">
+    <img class="logo" src="../../../../assets/logo.svg" alt="logo">
+        <p>SIGN UP</p>
+    <form class="signupForm" (ngSubmit)="onSignUp()"  [formGroup]="signUpForm">
+        
+        <input type="text" placeholder="Name" formControlName="name">
+        <input type="text" placeholder="Email" formControlName="email">
+        
+        <input type="password" placeholder="Password" formControlName="password">
+        <button type="submit" > SIGN UP</button>
+    </form>
+    <p class="new">Already a member? <a href="" routerLink="/auth/login">LOGIN</a></p>
+
+</div>
+

@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainContainer{
+    /* border: solid 2px black; */
+    padding: 10px;
+    margin: 10px;
+    /* background-color: #06062C; */
+}
+.routerContainer{
+    /* border: solid 2px green; */
+    margin-top: 20px;
+    height: fit-content;
+    padding: 10px;
+}
+.container{
+    /* border: solid 2px red; */
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #16213E; */
+    color: white;
+    height: fit-content;
+    height: 60px;
+}
+.logoDiv{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.links{
+    list-style-type: none;
+    display: flex;
+    
+}
+.links ul a {
+    text-decoration: none;
+    color: white;
+}
+.actionsBtns{
+    display: flex;
+    gap: 30px;
+    
+}
+.actionsBtns button{
+    height: 50px;
+    width: 150px;
+    outline: none;
+    
+    border-radius: 30px;
+    font-size: 16px;
+}
+.actionsBtns .loginBtn{
+    color: white;
+    background-color: transparent;
+
+}
+.actionsBtns .signupBtn ,.logoutBtn{
+    background-color: #E11584;
+    color: white;
+    border: solid 1px #06062C;
+
+}
+.logo {
+    height: 100px;
+    width: 50px;
+    
+}

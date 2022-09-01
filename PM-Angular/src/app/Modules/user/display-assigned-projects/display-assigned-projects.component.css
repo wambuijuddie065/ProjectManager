@@ -1,0 +1,27 @@
+.container{
+    color: white;
+}
+
+.aProject{
+    display: flex;
+    flex-direction: column;
+    border: solid 2px white ;
+    padding: 10px;
+    align-items: center;
+    width: 250px;
+    height: 200px;
+    gap: 10px;
+    border-radius: 20px;
+}
+.completeBtn{
+    height: 50px;
+    width: 180px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    background-color:#E11584;
+
+}

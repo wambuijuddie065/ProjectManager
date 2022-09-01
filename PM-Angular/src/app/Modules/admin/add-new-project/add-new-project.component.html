@@ -1,0 +1,13 @@
+<div class="container">
+    <h4 [ngStyle]="{textAlign:'center'}">Assign New Project</h4>
+    <form [formGroup]="projectForm" class="projectForm" (ngSubmit)="onSubmitProject()">
+        <input type="text" placeholder="Project Name" formControlName="projName">
+        <input type="text" placeholder="Project Description" formControlName="projDesc">
+        <input type="date" placeholder="Due Date" formControlName="dueDate">
+        <select  formControlName="selectEmail">
+            <option value="email">Select email</option>
+        </select>
+        <button class="addProjectBtn" >ADD PROJECT</button>
+
+    </form>
+</div>

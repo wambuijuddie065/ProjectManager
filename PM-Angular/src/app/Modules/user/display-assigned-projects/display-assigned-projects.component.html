@@ -1,0 +1,15 @@
+<div>
+    <div *ngIf="projectsArr.length;else noProjects">
+        <div *ngFor="let proj of projectsArr,let i=index" class="aProject">
+            <!-- <p>{{}}</p>
+            <p>{{}}</p>
+            <p>{{}}</p> -->
+            <!-- <button class="completeBtn">COMPLETE</button> -->
+
+        </div>
+    </div>
+   
+</div>
+<ng-template #noProjects>
+    <p>No projects assigned!!</p>
+</ng-template>

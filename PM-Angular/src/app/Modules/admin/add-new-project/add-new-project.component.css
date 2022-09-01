@@ -1,0 +1,33 @@
+.container{
+ width: 700px;
+
+    
+}
+.projectForm{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+
+}
+.projectForm input ,select{
+    height: 50px;
+    padding: 5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background-color: whitesmoke;
+}
+.addProjectBtn{
+    height: 50px;
+    padding: 5px;
+    background-color: #E11584;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    border: none;
+}
+input.ng-invalid.ng-touched{
+    border-bottom: red solid 1px;
+}

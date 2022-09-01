@@ -1,0 +1,34 @@
+<div class="mainContainer bg" >
+
+    <div class="container">
+        <!-- <p>LOGO</p> -->
+        <div class="logoDiv">
+            <img class="logo" src="../../../../../assets/logo.svg" alt="logo">
+            <p>TASKIFY</p>
+        </div>
+        
+        <li class="links">
+            <ul><a href="Home" routerLink="home">Home</a></ul>
+            <ul><a href="About Us">About Us</a></ul>
+            <ul><a href="Services">Services</a></ul>
+            <ul><a href="Contact">Contact</a></ul>
+        </li>
+        <div class="actionsBtns">
+            <button class="loginBtn" routerLink="auth/login"  >LOGIN</button>
+            <button class="signupBtn"  routerLink="auth/signup" >SIGN UP</button>
+            <button class="logoutBtn" (click)="isLoggedOut()" >LOGOUT</button>
+        </div>
+    </div>
+   
+    
+</div>
+<div class="routerContainer">
+    <router-outlet></router-outlet>
+    
+    
+
+</div>
+<!-- <app-login></app-login> -->
+    <!-- <app-signup></app-signup> -->
+    <!-- <app-admin></app-admin> -->
+    <!-- <app-user></app-user> -->
