@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './Modules/shared/shared.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { backgroundColor } from './Directives/backgroundColor';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    backgroundColor
   ],
   imports: [
     BrowserModule,

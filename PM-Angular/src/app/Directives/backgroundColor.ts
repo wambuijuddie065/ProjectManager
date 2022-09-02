@@ -3,15 +3,15 @@ import { Directive, HostBinding, Input, OnInit } from "@angular/core";
 
 
 @Directive({
-    selector:'[aapBackgroundColor]'
+    selector:'[appBackgroundColor]'
 }) 
 export class backgroundColor implements OnInit{
 
-    @Input() backgroundColor!:string
-    @HostBinding('style.backgrounColor') bgColor!:string
+    @Input() backgroundColor:string='white'
+    @HostBinding('style.backgroundColor') bgColor!:string
 
     constructor(){}
-    ngOnInit(): void {
+    ngOnInit() {
 
         this.bgColor=this.backgroundColor
         
