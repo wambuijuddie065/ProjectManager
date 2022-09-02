@@ -12,9 +12,9 @@ const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home',component:HeroComponent},
 
-  {path:'auth',loadChildren:() => import('./Modules/auth/auth.module').then(m=>m.AuthModule)},
-  {path:'admin',component:AdminComponent,canActivate:[AuthGuard]},
-  {path:'user',component:UserComponent,canActivate:[AuthGuard]},
+  {path:'auth', loadChildren:() => import('./Modules/auth/auth.module').then(m=>m.AuthModule)},
+  {path:'admin',canActivate: [AuthGuard], loadChildren:()=>import('./Modules/admin/admin.module').then(m=>m.AdminModule)},
+  {path:'user',canActivate: [AuthGuard], loadChildren:()=>import('./Modules/user/user.module').then(m=>m.UserModule)},
   
   {
     path:'**',

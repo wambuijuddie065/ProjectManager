@@ -7,7 +7,7 @@ const routerP=Router()
 routerP.post('/add',insertProject)//insertProject
 routerP.post('/')//asignProject
 routerP.get('/:id',getProject)//getProject
-routerP.get('/',VerifyToken,getProjects)//getProjects
+routerP.get('/',getProjects)//getProjects
 routerP.put('/:id',updateProject)//updateProject
 routerP.delete('/:id',deleteProject)//deleteProject
 routerP.post('/assignProject',assignNewProject)//assignNewProject

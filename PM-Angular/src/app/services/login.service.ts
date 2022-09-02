@@ -26,7 +26,7 @@ export class LoginService {
     })
    }
    IsLoggedIn(){
-    return localStorage.getItem('token')!=null
+    return (localStorage.getItem('isLoggedIn')=='true')
   }
 
 }

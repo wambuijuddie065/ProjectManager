@@ -1,15 +1,16 @@
-<div>
-    <div *ngIf="projectsArr.length;else noProjects">
+<div >
+    <div *ngIf="projectsArr.length;else noProjects" class="projectsContainer">
         <div *ngFor="let proj of projectsArr,let i=index" class="aProject">
-            <!-- <p>{{}}</p>
-            <p>{{}}</p>
-            <p>{{}}</p> -->
-            <!-- <button class="deleteBtn">DELETE</button> -->
-
+            <p>{{proj.project_name}}</p>
+            <p>{{proj.project_description}}</p>
+            <p>{{proj.due_date}}</p> 
+            <button (click)="deleteProject(proj.project_id)" class="deleteBtn">DELETE</button>
+            <!-- {{deleteProj$ | async}} -->
         </div>
     </div>
    
 </div>
+
 <ng-template #noProjects>
     <p>No projects available!!</p>
 </ng-template>

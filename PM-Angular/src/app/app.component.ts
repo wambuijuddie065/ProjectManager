@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthGuard } from './services/auth-guard';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,11 @@ import { AuthGuard } from './services/auth-guard';
 })
 export class AppComponent {
   title = 'PM-Angular';
-  constructor(public AuthGuard:AuthGuard, private route:Router){
+  constructor(public loginService:LoginService, private route:Router){
 
   }
   isLoggedOut(){
-    
-    this.route.navigate(['home'])
+    localStorage.clear()
+    this.route.navigate([''])
   }
 }

@@ -1,13 +1,10 @@
 <div class="container">
     <div class="leftContainer">
         <img class="logo" src="../../../../assets/logo.svg" alt="logo">
-        <div class="dashboard" >
-            <img src="../../../../assets/dashboard.svg" alt="">
-            <h3>Dashboard</h3>
-        </div>
+        
         <div class="assigned" >
             <img src="../../../../assets/projects.svg" alt="">
-            <h3>Assigned</h3>
+            <h3 routerLink="/user/projects">Assigned</h3>
         </div>
         <div class="complete" >
             <img src="../../../../assets/complete.svg" alt="">
@@ -20,6 +17,7 @@
         
     </div>
     <div class="rightContainer">
+        <router-outlet></router-outlet>
        
            <!-- display assigned projects here -->
            <!-- <app-display-assigned-projects></app-display-assigned-projects> -->

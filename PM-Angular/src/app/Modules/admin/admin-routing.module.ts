@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
 import { AdminComponent } from './admin/admin.component';
+import { DisplayProjectsComponent } from './display-projects/display-projects.component';
 
 
 
 const routes: Routes = [
-  {path:'',component:AdminComponent}
+  {path:'',component:AdminComponent,children:[
+    {path:'add',component:AddNewProjectComponent},
+    {path:'projects',component:DisplayProjectsComponent}
+  ]}
 ];
 
 @NgModule({

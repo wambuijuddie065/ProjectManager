@@ -14,13 +14,13 @@
             <ul><a href="Contact">Contact</a></ul>
         </li>
         <div class="actionsBtns">
-            <button class="loginBtn" routerLink="auth/login"  >LOGIN</button>
-            <button class="signupBtn"  routerLink="auth/signup" >SIGN UP</button>
-            <button class="logoutBtn" (click)="isLoggedOut()" >LOGOUT</button>
+            <button class="loginBtn" routerLink="auth/login" *ngIf="!loginService.IsLoggedIn()" >LOGIN</button>
+            <button class="signupBtn"  routerLink="auth/signup" *ngIf="!loginService.IsLoggedIn()" >SIGN UP</button>
+            <button class="logoutBtn" (click)="isLoggedOut()" *ngIf="loginService.IsLoggedIn()"  >LOGOUT</button>
         </div>
     </div>
    
-    
+     
 </div>
 <div class="routerContainer">
     <router-outlet></router-outlet>

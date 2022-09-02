@@ -70,7 +70,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:5000/projects/70e052fe-3f91-4648-a606-9127a7b9117d
+DELETE http://localhost:5000/projects/e628c9d4-9d6f-4fc3-86f9-6b9e09ef2034
 
 ###
 

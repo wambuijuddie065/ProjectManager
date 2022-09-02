@@ -3,26 +3,24 @@
         <img class="logo" src="../../../../assets/logo.svg" alt="logo">
         <div class="dashboard" >
             <img src="../../../../assets/dashboard.svg" alt="">
-            <h3>Dashboard</h3>
+            <h3><a href="" routerLink="/admin/projects">All Projects</a></h3>
         </div>
         <div class="assigned" >
             <img src="../../../../assets/projects.svg" alt="">
-            <h3>Assigned</h3>
+            <h3><a href="" routerLink="/admin/assigned">Assigned</a></h3>
         </div>
         <div class="complete" >
             <img src="../../../../assets/complete.svg" alt="">
-            <h3>Complete</h3>
+            <h3><a href="" routerLink="/admin/complete">Complete</a></h3>
         </div>
-        <div class="calendar" >
-            <img src="../../../../assets/calendar.svg" alt="">
-            <h3>Calendar</h3>
-        </div>
+        
         <div class="add" >
             <img src="../../../../assets/add.svg" alt="">
-            <h3>New project</h3>
+            <h3><a href="" routerLink="/admin/add">New project</a> </h3>
         </div>
     </div>
     <div class="rightContainer">
+        <router-outlet></router-outlet>
         
             <!-- <app-add-new-project></app-add-new-project> -->
             <!-- <app-display-projects></app-display-projects> -->

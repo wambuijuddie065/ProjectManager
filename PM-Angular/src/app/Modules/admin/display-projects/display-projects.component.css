@@ -2,6 +2,11 @@
     color: white;
     
 }
+.projectsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .aProject{
     display: flex;
     flex-direction: column;
@@ -10,7 +15,6 @@
     align-items: center;
     width: 250px;
     height: 200px;
-    gap: 10px;
     border-radius: 20px;
 }
 .deleteBtn{
