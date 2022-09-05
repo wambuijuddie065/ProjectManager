@@ -16,6 +16,7 @@ export class AdminService {
   constructor(private http:HttpClient) { }
    addProject(project:Project):Observable<Project>{
     return this.http.post<Project>(`${this.addUrl}`,project)
+   
 
    }
    displayProject():Observable<Project[]>{

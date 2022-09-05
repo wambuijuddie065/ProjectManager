@@ -11,10 +11,12 @@ import { AdminService } from 'src/app/services/admin.service';
 export class DisplayProjectsComponent implements OnInit {
 
   projectsArr:Project[]=[]
+  
 
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
+    
     this.getAllProjects()
   }
 

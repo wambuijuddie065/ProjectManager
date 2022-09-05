@@ -18,10 +18,16 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.signUpForm=new FormGroup({
       name:new FormControl(null,Validators.required),
-      email:new FormControl(null,[Validators.required,Validators.email]),
-      password:new FormControl(null,[Validators.required,Validators.minLength(8)])
+      email:new FormControl(null,[Validators.required,Validators.pattern('^[A-Za-z0-9._%+-]+@thejitu.com$')]),
+      password:new FormControl(null,[Validators.required,Validators.minLength(8),this.checkPassword])
     })
   }
+
+  checkPassword(control:FormControl){
+    const value=control.value
+     const special=/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]+/.test(value)
+     return !special? {special:true} :null
+   }
   onSignUp(){
 
     const user:SignupInterface=this.signUpForm.value

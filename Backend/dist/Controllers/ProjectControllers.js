@@ -12,11 +12,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assignNewProject = exports.deleteProject = exports.getProjects = exports.updateProject = exports.getUserProject = exports.getProject = exports.insertProject = void 0;
+exports.markComplete = exports.deleteProject = exports.getProjects = exports.getUserProject = exports.getProject = exports.insertProject = void 0;
 const mssql_1 = __importDefault(require("mssql"));
 const uuid_1 = require("uuid");
 const Config_1 = require("../Config/Config");
-const ProjectValidator_1 = require("../Helpers/ProjectValidator");
 const insertProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const pool = yield mssql_1.default.connect(Config_1.sqlConfig);
@@ -77,39 +76,43 @@ const getUserProject = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.getUserProject = getUserProject;
-const updateProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const id = req.params.id;
-        const { project_name, project_description, due_date, is_complete, isassigned, user_id } = req.body;
-        const pool = yield mssql_1.default.connect(Config_1.sqlConfig);
-        const projects = yield pool
-            .request()
-            .input("project_id", mssql_1.default.VarChar, id)
-            .execute("getProject");
-        const { recordset } = projects;
-        if (!projects.recordset[0]) {
-            res.json({ message: "Project Not Found!" });
-        }
-        else {
-            yield pool.request()
-                .input("project_id", mssql_1.default.VarChar, id)
-                .input("project_name", mssql_1.default.VarChar, project_name)
-                .input("project_description", mssql_1.default.VarChar, project_description)
-                .input("due_date", mssql_1.default.VarChar, due_date)
-                .input("is_complete", mssql_1.default.VarChar, is_complete)
-                .input("isassigned", mssql_1.default.VarChar, isassigned)
-                .input("user_id", mssql_1.default.VarChar, user_id)
-                .execute("updateProject");
-            res.json({
-                message: "Project updated successfully!",
-            });
-        }
-    }
-    catch (error) {
-        res.json({ error });
-    }
-});
-exports.updateProject = updateProject;
+// export const updateProject: RequestHandler<{ id: string }> = async (req,res ) => {
+//   try {
+//     const id = req.params.id;
+//     const { project_name,project_description,due_date,is_complete,isassigned ,user_id} = req.body as {
+//       project_name:string
+//       project_description:string
+//       due_date:string
+//       is_complete:string
+//       isassigned:string
+//       user_id:string
+//     };
+//     const pool = await mssql.connect(sqlConfig);
+//     const projects = await pool
+//       .request()
+//       .input("project_id", mssql.VarChar, id)
+//       .execute("getProject");
+//     const { recordset } = projects;
+//     if (!projects.recordset[0]) {
+//       res.json({ message: "Project Not Found!" });
+//     } else {
+//       await pool.request()
+//       .input("project_id", mssql.VarChar, id)
+//       .input("project_name", mssql.VarChar, project_name)
+//       .input("project_description", mssql.VarChar, project_description)
+//       .input("due_date", mssql.VarChar, due_date)
+//       .input("is_complete", mssql.VarChar, is_complete)
+//       .input("isassigned", mssql.VarChar, isassigned)
+//       .input("user_id", mssql.VarChar, user_id)
+//       .execute("updateProject");
+//       res.json({
+//         message: "Project updated successfully!",
+//       });
+//     }
+//   } catch (error: any) {
+//     res.json({ error });
+//   }
+// };
 const getProjects = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const pool = yield mssql_1.default.connect(Config_1.sqlConfig);
@@ -144,24 +147,26 @@ const deleteProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     }
 });
 exports.deleteProject = deleteProject;
-const assignNewProject = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const markComplete = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const id = req.params.project_id;
         const pool = yield mssql_1.default.connect(Config_1.sqlConfig);
-        const { project_name, user_id } = req.body;
-        const { error, value } = ProjectValidator_1.ProjectSchema1.validate(req.body);
-        if (error) {
-            return res.json({ error: error.details[0].message });
+        const projects = yield pool
+            .request()
+            .input('project_id', mssql_1.default.VarChar, id)
+            .execute('getProject');
+        if (!projects.recordset[0]) {
+            res.json({ message: 'Project Not Found' });
         }
         else {
             yield pool.request()
-                .input("p_name", mssql_1.default.VarChar, project_name)
-                .input("u_id", mssql_1.default.VarChar, user_id)
-                .execute("assignProject");
-            res.json({ message: 'project assigned' });
+                .input('project_id', mssql_1.default.VarChar, id)
+                .execute('updateProject');
+            res.json({ message: 'Project Updated ...' });
         }
     }
     catch (error) {
         res.json({ error });
     }
 });
-exports.assignNewProject = assignNewProject;
+exports.markComplete = markComplete;

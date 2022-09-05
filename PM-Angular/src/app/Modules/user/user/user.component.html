@@ -1,10 +1,11 @@
 <div class="container">
     <div class="leftContainer">
         <img class="logo" src="../../../../assets/logo.svg" alt="logo">
+        <p [ngStyle]="{textAlign:'center'}"> Hello,  {{username}}</p>
         
         <div class="assigned" >
             <img src="../../../../assets/projects.svg" alt="">
-            <h3 routerLink="/user/projects">Assigned</h3>
+            <h3><a href=""routerLink="/user/projects">Assigned</a></h3>
         </div>
         <div class="complete" >
             <img src="../../../../assets/complete.svg" alt="">

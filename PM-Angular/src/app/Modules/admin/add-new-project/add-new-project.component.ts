@@ -11,7 +11,7 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AddNewProjectComponent implements OnInit {
   projectForm!: FormGroup;
-
+  project_id!: string;
   project_name!: string;
   project_description!: string;
   due_date!: string;
@@ -36,6 +36,9 @@ export class AddNewProjectComponent implements OnInit {
       
       this.adminService.addProject(newProj).subscribe((response)=>{
         this.adminService.displayProject()
+        setTimeout(() => {
+          window.location.reload()
+        }, 500);
       }) 
       this.projectForm.reset()
       this.router.navigate(['/admin/projects'])

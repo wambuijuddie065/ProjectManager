@@ -8,7 +8,7 @@ import { DisplayProjectsComponent } from './display-projects/display-projects.co
 
 
 const routes: Routes = [
-  {path:'',component:AdminComponent,children:[
+  {path:'',canActivateChild:[AuthGuard],component:AdminComponent,children:[
     {path:'add',component:AddNewProjectComponent},
     {path:'projects',component:DisplayProjectsComponent}
   ]}

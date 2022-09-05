@@ -1,10 +1,11 @@
 <div>
-    <div *ngIf="projectsArr.length;else noProjects">
-        <div *ngFor="let proj of projectsArr,let i=index" class="aProject">
-            <!-- <p>{{}}</p>
-            <p>{{}}</p>
-            <p>{{}}</p> -->
-            <!-- <button class="completeBtn">COMPLETE</button> -->
+    <div *ngIf="myProjects.length;else noProjects">
+        <div *ngFor="let proj of myProjects,let i=index" class="aProject">
+            <p>{{proj.project_name}}</p>
+            <p>{{proj.project_description}}</p>
+            <p>{{proj.due_date}}</p> 
+            <button class="completeBtn" *ngIf="!isComplete" (click)="completeProject(proj.project_id)">COMPLETE</button>
+            <button class="completeBtn" *ngIf="isComplete" >DONE</button>
 
         </div>
     </div>

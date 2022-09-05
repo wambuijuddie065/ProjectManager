@@ -37,12 +37,14 @@ export interface LoginInterface{
     error:string
     message:string
     token:string
+    user_id:string
 
 }
 export interface CheckUserInterface{
     name:string
     role:string
     email:string
+    user_id:string
 }
 
 export interface SignupInterface{

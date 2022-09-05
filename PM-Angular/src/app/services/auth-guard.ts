@@ -3,8 +3,10 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
-  RouterStateSnapshot
+  RouterStateSnapshot,
+  UrlTree
 } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { LoginService } from './login.service';
 
@@ -13,12 +15,15 @@ import { LoginService } from './login.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private loginService: LoginService, private route: Router) {}
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):boolean {
+  canActivate():boolean {
     if (this.loginService.IsLoggedIn()) {
       return true;
     } else {
-      this.route.navigate(['/auth/home']);
+      this.route.navigate(['/home']);
       return false;
     }
   }
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    return this.canActivate()
+}
 }

@@ -88,3 +88,11 @@ Content-Type: application/json
     "project_name":"SQL",
     "user_id":"a87d3383-25fa-43f9-8200-646b3ac0ea68"
 }
+
+###
+
+GET http://localhost:5000/projects/ef2f2fcc-7e7a-4ca0-803f-269cdd312750/getone
+
+###
+
+GET http://localhost:5000/projects/7bf5acdf-a7db-4f39-9df8-4fc71b16339c/complete

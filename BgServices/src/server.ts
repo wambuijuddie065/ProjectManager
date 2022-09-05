@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from 'express';
 import cron from 'node-cron'
 import SendAssignedEmails from './EmailService/AssignmentEmailService';
+import SendEmailToAdmin from './EmailService/SendToAdmin';
 
 
 
@@ -13,6 +14,7 @@ const run=()=>{
     cron.schedule('*/5 * * * * *', async()  => {
         console.log('running a task every 5 seconds');
         await SendAssignedEmails()
+        
     });
 
    
