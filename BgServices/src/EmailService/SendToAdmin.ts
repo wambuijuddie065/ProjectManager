@@ -20,7 +20,7 @@ export interface Project{
 const SendEmailToAdmin= async()=>{
 const pool = await mssql.connect(sqlConfig)
 const projects:Project[]= await(await pool.request().query(`
-SELECT * FROM ProjectsTable WHERE is_complete ='0'`
+SELECT * FROM ProjectsTable WHERE is_complete ='1'`
 )).recordset
  for(let project of projects){
     ejs.renderFile('Templates/Completed.ejs',{email:project.email,name:project.project_name } ,async(error,data)=>{
@@ -34,7 +34,7 @@ SELECT * FROM ProjectsTable WHERE is_complete ='0'`
         try {
             
             await sendMail(messageoption)
-            await pool.request().query(`UPDATE ProjectsTable SET is_complete='1' WHERE project_id = '${project.project_id}'`)
+            await pool.request().query(`UPDATE ProjectsTable SET is_complete='2' WHERE project_id = '${project.project_id}'`)
             await pool.request().query(`UPDATE UsersTable SET isassigned='0' WHERE user_id='${project.user_id}'`)
             console.log('Email Sent Successfuly');
             

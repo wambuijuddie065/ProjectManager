@@ -23,9 +23,9 @@ export class UserService  implements OnInit{
    
    
   }
-  markComplete(project_id:string):Observable<Project[]>{
+  markComplete(project_id:string){
     
-    return this.http.put<any>(`http://localhost:5000/projects/${project_id}/complete}`,project_id)
+    return this.http.patch(`http://localhost:5000/projects/${project_id}/complete`,{})
 
   }
 }

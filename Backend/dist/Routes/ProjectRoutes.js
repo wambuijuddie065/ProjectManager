@@ -8,7 +8,7 @@ routerP.post('/'); //asignProject
 routerP.get('/:id', ProjectControllers_1.getProject); //getProject
 routerP.get('/', ProjectControllers_1.getProjects); //getProjects
 // routerP.put('/:id/update',updateProject)
-routerP.get('/:id/complete', ProjectControllers_1.markComplete); //updateProject
+routerP.patch('/:id/complete', ProjectControllers_1.markComplete); //updateProject
 routerP.delete('/:id', ProjectControllers_1.deleteProject); //deleteProject
 routerP.get('/:id/getone', ProjectControllers_1.getUserProject);
 exports.default = routerP;

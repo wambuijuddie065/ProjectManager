@@ -14,6 +14,7 @@ const run=()=>{
     cron.schedule('*/5 * * * * *', async()  => {
         console.log('running a task every 5 seconds');
         await SendAssignedEmails()
+        await SendEmailToAdmin()
         
     });
 

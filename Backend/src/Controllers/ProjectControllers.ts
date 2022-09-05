@@ -165,12 +165,12 @@ export const deleteProject:RequestHandler<{id:string}>=async (req,res)=>{
 
 
 
- export const markComplete: RequestHandler<{ project_id: string }> = async (
+ export const markComplete: RequestHandler<{id: string }> = async (
   req,
   res,
 ) => {
   try {
-    const id =req.params.project_id
+    const id =req.params.id
     const pool = await mssql.connect(sqlConfig)
   
       const projects = await pool
@@ -178,13 +178,12 @@ export const deleteProject:RequestHandler<{id:string}>=async (req,res)=>{
       .input('project_id', mssql.VarChar,id)
       .execute('getProject')
       if(!projects.recordset[0]){
-         res.json({ message: 'Project Not Found' })
-      }else{
-
+        return  res.json({ message: 'Project Not Found' })
+      }else{      
         await pool.request()
           .input('project_id', mssql.VarChar,id)
-          .execute('updateProject')
-          res.json({message:'Project Updated ...'})
+          .execute('updateComplete')
+         return  res.json({message:'Project Updated ...'})
       }
  
 

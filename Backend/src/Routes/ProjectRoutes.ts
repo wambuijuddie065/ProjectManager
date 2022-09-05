@@ -9,7 +9,7 @@ routerP.post('/')//asignProject
 routerP.get('/:id',getProject)//getProject
 routerP.get('/',getProjects)//getProjects
 // routerP.put('/:id/update',updateProject)
-routerP.get('/:id/complete',markComplete)//updateProject
+routerP.patch('/:id/complete',markComplete)//updateProject
 routerP.delete('/:id',deleteProject)//deleteProject
 
 routerP.get('/:id/getone',getUserProject)

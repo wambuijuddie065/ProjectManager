@@ -149,20 +149,20 @@ const deleteProject = (req, res) => __awaiter(void 0, void 0, void 0, function* 
 exports.deleteProject = deleteProject;
 const markComplete = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const id = req.params.project_id;
+        const id = req.params.id;
         const pool = yield mssql_1.default.connect(Config_1.sqlConfig);
         const projects = yield pool
             .request()
             .input('project_id', mssql_1.default.VarChar, id)
             .execute('getProject');
         if (!projects.recordset[0]) {
-            res.json({ message: 'Project Not Found' });
+            return res.json({ message: 'Project Not Found' });
         }
         else {
             yield pool.request()
                 .input('project_id', mssql_1.default.VarChar, id)
-                .execute('updateProject');
-            res.json({ message: 'Project Updated ...' });
+                .execute('updateComplete');
+            return res.json({ message: 'Project Updated ...' });
         }
     }
     catch (error) {

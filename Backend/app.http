@@ -51,9 +51,10 @@ GET http://localhost:5000/projects
 
 ###
 
-GET http://localhost:5000/projects/9f9d811e-dd92-4c5b-a93f-b8ca6bfa3786
-###
+GET http://localhost:5000/projects/71015e96-3fa2-4373-8b42-9c4794f31811
 
+
+####
 PUT http://localhost:5000/projects/f06debca-ffee-472b-b56f-3cef99ec5313
 Content-Type: application/json
 
@@ -95,4 +96,5 @@ GET http://localhost:5000/projects/ef2f2fcc-7e7a-4ca0-803f-269cdd312750/getone
 
 ###
 
-GET http://localhost:5000/projects/7bf5acdf-a7db-4f39-9df8-4fc71b16339c/complete
+PATCH   http://localhost:5000/projects/71015e96-3fa2-4373-8b42-9c4794f31811/complete
+Content-Type: application/json
